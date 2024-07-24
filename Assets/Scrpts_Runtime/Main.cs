@@ -13,7 +13,12 @@ public class Main : MonoBehaviour
 
         ctx = new Context();
 
-        Debug.Log("Main Awake");
+        ctx.Inject();
+
+        // === Load===
+        ModuleAssets.Load(ctx.assets);
+
+        WallDomain.Spawn(ctx.gameContext);
 
     }
 
