@@ -10,21 +10,25 @@ public class Main : MonoBehaviour
 
     void Awake()
     {
+        // ==== Phase: Instantiate ====
 
         ctx = new Context();
+        // ==== Phase: Inject ====
 
         ctx.Inject();
 
-        // === Load===
+        // ==== Phase: Load ====
         ModuleAssets.Load(ctx.assets);
 
-        WallDomain.Spawn(ctx.gameContext);
+        // ==== Phase: Enter Game ====
+        GameBusiness.Enter(ctx.gameContext);
 
     }
 
     void Update()
     {
-
+        float dt = Time.deltaTime;
+        GameBusiness.Tick(ctx.gameContext, dt);
     }
 
     void OnDestory()

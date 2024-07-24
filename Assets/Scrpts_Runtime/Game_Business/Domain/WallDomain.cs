@@ -5,7 +5,7 @@ using UnityEngine;
 public static class WallDomain
 {
 
-    public static WallEntity Spawn(GameContext ctx)
+    public static WallEntity Spawn(GameContext ctx,Vector3 pos)
     {
         bool has = ctx.assets.TryGetEntity("Wall_Entity", out GameObject prefab);
         if (!has)
@@ -19,6 +19,7 @@ public static class WallDomain
 
         entity.id = ctx.idService.WallIDRecoder++;
         entity.moveSpeed = ctx.gameEntity.objMoveSpeed;
+        entity.SetPos(pos);
 
         ctx.wallRespository.Add(entity);
         return entity;

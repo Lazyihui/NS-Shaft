@@ -17,10 +17,14 @@ public class WallEntity : MonoBehaviour
         Vector2 pos = transform.position;
         pos += moveSpeed * dt * Vector2.up;// 向上移动
         transform.position = pos;
-
         if (pos.y > 12.5f)
         {
             transform.position = new Vector3(0, -12.5f, 0);
         }
+    }
+
+    public void SetPos(Vector3 pos)
+    {
+        transform.position = pos;
     }
 }
