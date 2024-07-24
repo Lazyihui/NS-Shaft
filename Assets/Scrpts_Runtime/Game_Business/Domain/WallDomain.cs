@@ -17,7 +17,7 @@ public static class WallDomain
         GameObject go = GameObject.Instantiate(prefab);
         WallEntity entity = go.GetComponent<WallEntity>();
 
-        entity.id = ctx.idService.WallIDRecoder++;
+        entity.id = ctx.idService.WallIDRecord++;
         entity.moveSpeed = ctx.gameEntity.objMoveSpeed;
         entity.SetPos(pos);
 

@@ -10,6 +10,8 @@ public class GameContext
     //repo
     public WallRespository wallRespository;
 
+    public PlayerRespository playerRespository;
+
 
     //Inject
     public AssetsContext assets;
@@ -20,6 +22,7 @@ public class GameContext
         idService = new IDService();
 
         wallRespository = new WallRespository();
+        playerRespository = new PlayerRespository();
     }
 
     public void Inject(AssetsContext assets)

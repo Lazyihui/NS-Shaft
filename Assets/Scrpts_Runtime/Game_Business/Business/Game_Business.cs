@@ -6,6 +6,8 @@ public static class GameBusiness
 {
     public static void Enter(GameContext ctx)
     {
+        PlayerDomain.Spawn(ctx);
+
         WallDomain.Spawn(ctx,new Vector3(0,0,0));
         WallDomain.Spawn(ctx,new Vector3(0,-12.5f,0));
         Debug.Log("GameBusiness Enter");

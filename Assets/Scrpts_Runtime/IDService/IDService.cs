@@ -1,10 +1,12 @@
 
 public class IDService
 {
-    public int WallIDRecoder;
+    public int WallIDRecord;
 
+    public int playerIDRecord;
     public IDService()
     {
-        WallIDRecoder = 0;
+        WallIDRecord = 0;
+        playerIDRecord = 0;
     }
 }

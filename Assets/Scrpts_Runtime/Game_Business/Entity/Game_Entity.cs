@@ -10,6 +10,6 @@ public class GameEntity
 
     public GameEntity()
     {
-        objMoveSpeed = 1.0f;
+        objMoveSpeed = 0.5f;
     }
 }
