@@ -20,10 +20,18 @@ public static class PlayerDomain
         entity.id = ctx.idService.playerIDRecord++;
 
         entity.Ctor();
-
+    
+        ctx.playerRespository.Add(entity);
         return entity;
     }
 
+
+    public static void Move(GameContext ctx, PlayerEntity player, Vector2 moveAxis)
+    {
+        Debug.Log(moveAxis);
+        player.Move(moveAxis);
+
+    }
 }
 
 

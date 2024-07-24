@@ -16,6 +16,8 @@ public class GameContext
     //Inject
     public AssetsContext assets;
 
+    public ModuleInput moduleInput;
+
     public GameContext()
     {
         gameEntity = new GameEntity();
@@ -25,8 +27,9 @@ public class GameContext
         playerRespository = new PlayerRespository();
     }
 
-    public void Inject(AssetsContext assets)
+    public void Inject(AssetsContext assets, ModuleInput moduleInput)
     {
         this.assets = assets;
+        this.moduleInput = moduleInput;
     }
 }

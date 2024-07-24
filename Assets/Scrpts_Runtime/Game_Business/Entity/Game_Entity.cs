@@ -12,4 +12,5 @@ public class GameEntity
     {
         objMoveSpeed = 0.5f;
     }
+
 }

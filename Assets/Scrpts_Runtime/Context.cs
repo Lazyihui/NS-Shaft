@@ -8,13 +8,16 @@ public class Context{
 
     public GameContext gameContext;
 
+    public ModuleInput moduleInput;
+
     public Context(){
         assets = new AssetsContext();
         gameContext = new GameContext();
+        moduleInput = new ModuleInput();
     }
 
 
     public void Inject(){
-        gameContext.Inject(assets);
+        gameContext.Inject(assets,moduleInput);
     }
 }

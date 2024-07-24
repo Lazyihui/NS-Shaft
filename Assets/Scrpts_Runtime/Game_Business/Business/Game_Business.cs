@@ -8,8 +8,8 @@ public static class GameBusiness
     {
         PlayerDomain.Spawn(ctx);
 
-        WallDomain.Spawn(ctx,new Vector3(0,0,0));
-        WallDomain.Spawn(ctx,new Vector3(0,-12.5f,0));
+        WallDomain.Spawn(ctx, new Vector3(0, 0, 0));
+        WallDomain.Spawn(ctx, new Vector3(0, -12.5f, 0));
         Debug.Log("GameBusiness Enter");
 
     }
@@ -55,6 +55,7 @@ public static class GameBusiness
 
     static void PreTick(GameContext ctx, float dt)
     {
+        ctx.moduleInput.ProcessMove();
     }
 
     static void LogicFix(GameContext ctx, float dt)
@@ -64,6 +65,13 @@ public static class GameBusiness
         {
             WallEntity wall = walls[i];
             WallDomain.Move(ctx, wall, dt);
+        }
+
+        int PlayerLen = ctx.playerRespository.TakeAll(out PlayerEntity[] players);
+        for (int i = 0; i < PlayerLen; i++)
+        {
+            PlayerEntity player = players[i];
+            PlayerDomain.Move(ctx, player, ctx.moduleInput.moveAxis);
         }
 
 
