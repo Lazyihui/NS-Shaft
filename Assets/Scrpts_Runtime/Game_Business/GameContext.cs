@@ -18,6 +18,8 @@ public class GameContext {
 
     public ModuleInput moduleInput;
 
+    public TemplateContext templateContext;
+
     public GameContext() {
         gameEntity = new GameEntity();
         idService = new IDService();
@@ -27,8 +29,9 @@ public class GameContext {
         blockRespository = new BlockRespository();
     }
 
-    public void Inject(AssetsContext assets, ModuleInput moduleInput) {
+    public void Inject(AssetsContext assets, ModuleInput moduleInput,TemplateContext templateContext) {
         this.assets = assets;
         this.moduleInput = moduleInput;
+        this.templateContext = templateContext;
     }
 }

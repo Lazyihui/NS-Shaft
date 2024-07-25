@@ -16,6 +16,10 @@ public class BlockEntity : MonoBehaviour {
 
     }
 
+    public void SetPos(Vector3 pos) {
+        transform.position = pos;
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
 
         if (!gameObject.CompareTag("Nails")) {

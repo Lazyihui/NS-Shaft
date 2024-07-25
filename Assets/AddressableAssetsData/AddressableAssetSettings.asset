@@ -89,6 +89,7 @@ MonoBehaviour:
     - default
     - Entity
     - Panel
+    - BlockTM
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: cf4c865d8dfcf6445b322c504a81fd05, type: 2}

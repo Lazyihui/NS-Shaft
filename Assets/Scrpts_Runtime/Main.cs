@@ -19,6 +19,7 @@ public class Main : MonoBehaviour
 
         // ==== Phase: Load ====
         ModuleAssets.Load(ctx.assets);
+        TemplateInfras.Load(ctx.templateContext);
 
         // ==== Phase: Enter Game ====
         GameBusiness.Enter(ctx.gameContext);
@@ -50,5 +51,6 @@ public class Main : MonoBehaviour
         isTearDown = true;
         // === Unload===
         ModuleAssets.Unload(ctx.assets);
+        TemplateInfras.Unload(ctx.templateContext);
     }
 }

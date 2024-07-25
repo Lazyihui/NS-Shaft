@@ -10,14 +10,17 @@ public class Context{
 
     public ModuleInput moduleInput;
 
+    public TemplateContext templateContext;
+
     public Context(){
         assets = new AssetsContext();
         gameContext = new GameContext();
         moduleInput = new ModuleInput();
+        templateContext = new TemplateContext();
     }
 
 
     public void Inject(){
-        gameContext.Inject(assets,moduleInput);
+        gameContext.Inject(assets,moduleInput,templateContext);
     }
 }
