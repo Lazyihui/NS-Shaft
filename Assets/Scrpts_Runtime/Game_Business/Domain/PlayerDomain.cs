@@ -28,7 +28,6 @@ public static class PlayerDomain
 
     public static void Move(GameContext ctx, PlayerEntity player, Vector2 moveAxis)
     {
-        Debug.Log(moveAxis);
         player.Move(moveAxis);
 
     }
