@@ -19,4 +19,9 @@ public class BlockTM : ScriptableObject {
 
     public Sprite sprite;
 
+    public string tag;
+
+    public string Layer;
+
+
 }

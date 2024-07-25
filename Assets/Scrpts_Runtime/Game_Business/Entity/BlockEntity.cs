@@ -9,7 +9,6 @@ public class BlockEntity : MonoBehaviour {
     [SerializeField] SpriteRenderer sr;
 
 
-
     public int id;
 
     public int typeID;

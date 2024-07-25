@@ -13,7 +13,13 @@ public static class BlockDomain {
         }
         ctx.assets.TryGetEntity("Block_Entity", out GameObject prefab);
         GameObject go = GameObject.Instantiate(prefab);
+        
+        go.tag = tm.tag;
+        go.layer = LayerMask.NameToLayer(tm.Layer);
         BlockEntity entity = go.GetComponent<BlockEntity>();
+        
+        
+        
         entity.Ctor();
         entity.id = ctx.idService.blockIDRecord++;
         entity.typeID = typeID;

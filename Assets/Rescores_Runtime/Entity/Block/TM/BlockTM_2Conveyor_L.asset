@@ -17,3 +17,5 @@ MonoBehaviour:
   moveSpeed: 3
   animatior: {fileID: 9100000, guid: 71462119df307b8469a37ecc07398fd2, type: 2}
   sprite: {fileID: 502282454498985646, guid: 13f146315dce5c94e80fb2bee6bc138c, type: 3}
+  tag: Conveyor
+  Layer: isGround
