@@ -12,4 +12,11 @@ public class BlockTM : ScriptableObject {
     public bool isLeft;
 
     public float moveSpeed;
+
+    [Header("Animation")]
+
+    public RuntimeAnimatorController animatior;
+
+    public Sprite sprite;
+
 }

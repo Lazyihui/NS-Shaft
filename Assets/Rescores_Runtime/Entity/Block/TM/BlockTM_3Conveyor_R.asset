@@ -15,3 +15,5 @@ MonoBehaviour:
   typeID: 3
   isLeft: 0
   moveSpeed: 3
+  animatior: {fileID: 9100000, guid: 806877f43f5e619439ad009437e12f54, type: 2}
+  sprite: {fileID: 2347899175941550514, guid: a2483e715bfc69a409dc99779b798fb4, type: 3}

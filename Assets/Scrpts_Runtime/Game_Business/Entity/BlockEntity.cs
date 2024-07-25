@@ -1,7 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockEntity : MonoBehaviour {
+
+    [SerializeField] Animator animator;
+
+    [SerializeField] SpriteRenderer sr;
+
 
 
     public int id;
@@ -18,6 +24,14 @@ public class BlockEntity : MonoBehaviour {
 
     public void SetPos(Vector3 pos) {
         transform.position = pos;
+    }
+
+    public void SetSr(Sprite sprite) {
+        sr.sprite = sprite;
+    }
+
+    public void SetAni(RuntimeAnimatorController ani) {
+        animator.runtimeAnimatorController = ani;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
