@@ -231,5 +231,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 2226006438595938351}
   animator: {fileID: 3274155033034863583}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
   id: 0
   moveSpeed: 5

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 347535053}
   - component: {fileID: 347535052}
   - component: {fileID: 347535054}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 1461750026}
   - component: {fileID: 1461750025}
   - component: {fileID: 1461750024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: normal (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
