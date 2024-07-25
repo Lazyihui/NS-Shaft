@@ -13,7 +13,13 @@ public class PlayerEntity : MonoBehaviour {
 
     public float moveSpeed;
 
-    public void Ctor() { }
+    public int health;
+
+    public int healthMax;
+
+    public void Ctor() {
+        health = healthMax;
+    }
 
     public void Move(Vector2 moveAxis) {
         Vector2 oldVelocity = rb.velocity;
@@ -47,6 +53,16 @@ public class PlayerEntity : MonoBehaviour {
         //  用圆
         return Physics2D.CircleCast(transform.position, 0.3f, Vector2.down, 0.25f, whatIsGround);
     }
+
+    public void ModifyHealth(int value) {
+        health += value;
+        health = Mathf.Clamp(health, 0, healthMax);
+
+        if (value < 0) {
+            animator.SetTrigger("Hurt");
+        }
+    }
+
 
 }
 
