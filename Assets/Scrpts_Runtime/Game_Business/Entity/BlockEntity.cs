@@ -26,6 +26,8 @@ public class BlockEntity : MonoBehaviour {
     //bool 
     public bool isCelling;
 
+
+
     public void Ctor() {
 
     }

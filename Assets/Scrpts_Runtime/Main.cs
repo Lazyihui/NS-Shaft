@@ -30,6 +30,8 @@ public class Main : MonoBehaviour
     {
         float dt = Time.deltaTime;
         GameBusiness.Tick(ctx.gameContext, dt);
+        GameDomain.ToSpawnBlock(ctx.gameContext, dt);
+
     }
 
     void OnDestory()

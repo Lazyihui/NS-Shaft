@@ -295,6 +295,8 @@ MonoBehaviour:
   typeID: 0
   isLeft: 0
   moveSpeed: 3
+  selfMoveSpeed: 0
+  isCelling: 0
 --- !u!1 &312185366
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +450,8 @@ MonoBehaviour:
   typeID: 0
   isLeft: 0
   moveSpeed: 0
+  selfMoveSpeed: 0
+  isCelling: 0
 --- !u!1 &347535051
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +533,7 @@ Transform:
   m_GameObject: {fileID: 347535051}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.11, y: -0.77, z: 0}
+  m_LocalPosition: {x: 0.11, y: -1.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -757,6 +761,8 @@ MonoBehaviour:
   typeID: 0
   isLeft: 1
   moveSpeed: 3
+  selfMoveSpeed: 0
+  isCelling: 0
 --- !u!1 &1415216574
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +961,8 @@ MonoBehaviour:
   typeID: 0
   isLeft: 0
   moveSpeed: 0
+  selfMoveSpeed: 0
+  isCelling: 0
 --- !u!1 &2139349207
 GameObject:
   m_ObjectHideFlags: 0
