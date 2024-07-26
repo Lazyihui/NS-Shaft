@@ -17,6 +17,10 @@ public class PlayerEntity : MonoBehaviour {
 
     public int healthMax;
 
+    // 当前脚底下的板子记录
+    public BoxCollider2D currentBlock;
+
+
     public void Ctor() {
         health = healthMax;
     }
@@ -61,8 +65,17 @@ public class PlayerEntity : MonoBehaviour {
         if (value < 0) {
             animator.SetTrigger("Hurt");
         }
+        Debug.Log("Health: " + health);
     }
 
+
+    public void DisableCurrentBlock() {
+    
+        if (currentBlock != null) {
+            currentBlock.enabled = false;
+        }
+    
+    }
 
 }
 

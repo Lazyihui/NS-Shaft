@@ -41,22 +41,39 @@ public class BlockEntity : MonoBehaviour {
     }
     void OnCollisionEnter2D(Collision2D collision) {
 
+        PlayerEntity player = collision.gameObject.GetComponent<PlayerEntity>();
+
+
+        // normal conveyor
         if (!gameObject.CompareTag("Nails")) {
 
 
             // 要改 扣血
             PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), 1);
+            player.currentBlock = GetComponent<BoxCollider2D>();
 
         } else {
+
+            // 尖刺 会扣血的东西
             if (collision.contacts[0].normal == Vector2.down) {
                 // 要改 加血
                 PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -1);
+                player.currentBlock = GetComponent<BoxCollider2D>();
+
+            }
+
+            if (collision.contacts[0].normal == Vector2.up) {
+                // 要改 扣血
+                PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -1);
+                player.DisableCurrentBlock();
             }
         }
+
 
     }
 
     void OnCollisionStay2D(Collision2D collision) {
+
         if (gameObject.CompareTag("Conveyor") && collision.contacts[0].normal == Vector2.down) {
 
             Vector2 dir = isLeft ? Vector2.left : Vector2.right;
