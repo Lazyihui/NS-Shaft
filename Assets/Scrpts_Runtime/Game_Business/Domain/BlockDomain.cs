@@ -31,12 +31,28 @@ public static class BlockDomain {
 
         entity.moveSpeed = tm.moveSpeed;
         entity.isLeft = tm.isLeft;
+        entity.isCelling = tm.isCelling;
+
+        entity.selfMoveSpeed =ctx.gameEntity.objMoveSpeed;
 
 
         ctx.blockRespository.Add(entity);
         return entity;
 
+    }
 
+    public static void MoveUp(GameContext ctx, BlockEntity block, float dt) {
+        
+        if(block == null){
+            return;
+        }
+        
+        if(block.isCelling){
+            return;
+        }else{
+            block.MoveUp(dt);
+        }
 
+    
     }
 }

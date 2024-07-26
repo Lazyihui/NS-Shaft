@@ -25,5 +25,8 @@ public class BlockTM : ScriptableObject {
 
     public Vector2 colliderSize;
 
+    [Header("Celling")]
+    public bool isCelling;
+
 
 }

@@ -11,6 +11,7 @@ public class BlockEntity : MonoBehaviour {
     [SerializeField] BoxCollider2D boxCollider2D;
 
 
+
     public int id;
 
     public int typeID;
@@ -19,6 +20,12 @@ public class BlockEntity : MonoBehaviour {
     public bool isLeft;
 
     public float moveSpeed;
+
+    public float selfMoveSpeed;
+
+    //bool 
+    public bool isCelling;
+
     public void Ctor() {
 
     }
@@ -38,6 +45,19 @@ public class BlockEntity : MonoBehaviour {
 
     public void SetColliderSize(Vector2 size) {
         boxCollider2D.size = size;
+    }
+
+    public void MoveUp(float dt) {
+        transform.position += Vector3.up * selfMoveSpeed * dt;
+
+        // 超出屏幕销毁
+        if (transform.position.y > 6) {
+            TearDown();
+        }
+    }
+
+    public void TearDown() {
+        Destroy(gameObject);
     }
     void OnCollisionEnter2D(Collision2D collision) {
 

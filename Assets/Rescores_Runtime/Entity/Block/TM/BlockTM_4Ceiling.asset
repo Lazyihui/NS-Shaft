@@ -20,3 +20,4 @@ MonoBehaviour:
   tag: Nails
   Layer: Default
   colliderSize: {x: 12.5, y: 0.5}
+  isCelling: 1

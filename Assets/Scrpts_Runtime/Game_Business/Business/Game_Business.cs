@@ -81,6 +81,12 @@ public static class GameBusiness
             PlayerDomain.Move(ctx, player, ctx.moduleInput.moveAxis);
         }
 
+        int BlockLen = ctx.blockRespository.TakeAll(out BlockEntity[] blocks);
+        for (int i = 0; i < BlockLen; i++)
+        {
+            BlockEntity block = blocks[i];
+            BlockDomain.MoveUp(ctx, block, dt);
+        }
 
     }
 
