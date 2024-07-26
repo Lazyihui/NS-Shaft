@@ -13,13 +13,13 @@ public static class BlockDomain {
         }
         ctx.assets.TryGetEntity("Block_Entity", out GameObject prefab);
         GameObject go = GameObject.Instantiate(prefab);
-        
+
         go.tag = tm.tag;
         go.layer = LayerMask.NameToLayer(tm.Layer);
         BlockEntity entity = go.GetComponent<BlockEntity>();
-        
-        
-        
+
+
+
         entity.Ctor();
         entity.id = ctx.idService.blockIDRecord++;
         entity.typeID = typeID;
@@ -33,7 +33,7 @@ public static class BlockDomain {
         entity.isLeft = tm.isLeft;
         entity.isCelling = tm.isCelling;
 
-        entity.selfMoveSpeed =ctx.gameEntity.objMoveSpeed;
+        entity.selfMoveSpeed = ctx.gameEntity.objMoveSpeed;
 
 
         ctx.blockRespository.Add(entity);
@@ -42,17 +42,32 @@ public static class BlockDomain {
     }
 
     public static void MoveUp(GameContext ctx, BlockEntity block, float dt) {
-        
-        if(block == null){
+
+        if (block == null) {
             return;
-        }
-        
-        if(block.isCelling){
-            return;
-        }else{
-            block.MoveUp(dt);
         }
 
-    
+        if (block.isCelling) {
+            return;
+        } else {
+            block.MoveUp(dt);
+        }
     }
+
+    // 假板子collider 2D 的消失 和 animator .setTrigger("Move") 就是播动画
+
+    public static void FakeBlockTrigger(GameContext ctx, BlockEntity block) {
+        if (block == null || block.typeID != 4) {
+            return;
+        }
+
+        PlayerEntity player = ctx.playerRespository.Find(x => x.id == 0);
+
+        if (block.fakeTimer > 1) {
+            block.fakeTimer = 0;
+            block.animator.SetTrigger("Move");
+            player.DisableCurrentBlock();
+        }
+    }
+
 }

@@ -20,7 +20,7 @@ public class GameEntity
         objMoveSpeed = 1.5f;
 
         blockSpawnTimer = 0;
-        blockSpawnInterval =2.5f;
+        blockSpawnInterval =1.5f;
     }
 
 }

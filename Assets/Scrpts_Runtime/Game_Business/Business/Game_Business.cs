@@ -9,13 +9,12 @@ public static class GameBusiness {
         WallDomain.Spawn(ctx, new Vector3(0, 0, 0));
         WallDomain.Spawn(ctx, new Vector3(0, -12.5f, 0));
 
-        BlockDomain.Spawn(ctx, 0, new Vector3(0, -0.7f, 0));
-        BlockDomain.Spawn(ctx, 1, new Vector3(-0.2f, -3, 0));
-        BlockDomain.Spawn(ctx, 2, new Vector3(-4, -2, 0));
+        BlockDomain.Spawn(ctx, 0, new Vector3(0, -4f, 0));
 
-        BlockDomain.Spawn(ctx, 3, new Vector3(5, -2, 0));
 
-        BlockDomain.Spawn(ctx, 4, new Vector3(0, 4.7f, 0));
+
+
+        BlockDomain.Spawn(ctx, 6, new Vector3(0, 4.7f, 0));
 
     }
 
@@ -77,6 +76,7 @@ public static class GameBusiness {
         for (int i = 0; i < BlockLen; i++) {
             BlockEntity block = blocks[i];
             BlockDomain.MoveUp(ctx, block, dt);
+            BlockDomain.FakeBlockTrigger(ctx, block);
         }
 
     }

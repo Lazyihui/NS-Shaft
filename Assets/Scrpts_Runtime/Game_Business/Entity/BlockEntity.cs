@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BlockEntity : MonoBehaviour {
 
-    [SerializeField] Animator animator;
+    [SerializeField] public  Animator animator;
 
     [SerializeField] SpriteRenderer sr;
 
@@ -26,10 +26,11 @@ public class BlockEntity : MonoBehaviour {
     //bool 
     public bool isCelling;
 
+    public float fakeTimer;
 
 
     public void Ctor() {
-
+        fakeTimer = 0;
     }
 
     public void SetPos(Vector3 pos) {
@@ -100,6 +101,13 @@ public class BlockEntity : MonoBehaviour {
 
             Vector2 dir = isLeft ? Vector2.left : Vector2.right;
             collision.gameObject.transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
+
+        }
+
+          if (gameObject.CompareTag("Fake") && collision.contacts[0].normal == Vector2.down) {
+
+            fakeTimer += Time.deltaTime;
+
 
         }
 

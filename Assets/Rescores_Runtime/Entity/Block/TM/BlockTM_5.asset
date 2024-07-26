@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1351cb833debcd4daf2fba00b0eec8b, type: 3}
+  m_Name: BlockTM_5
+  m_EditorClassIdentifier: 
+  typeID: 5
+  isLeft: 0
+  moveSpeed: 0
+  animatior: {fileID: 9100000, guid: e8c4bfc65f40c2d4d8d6fae68212b494, type: 2}
+  sprite: {fileID: -117601332951816804, guid: 58a06f184081e9b42b3f3e10b3a6b220, type: 3}
+  tag: Fake
+  Layer: isGround
+  colliderSize: {x: 3, y: 0.5}
+  isCelling: 0
