@@ -19,3 +19,4 @@ MonoBehaviour:
   sprite: {fileID: 502282454498985646, guid: 13f146315dce5c94e80fb2bee6bc138c, type: 3}
   tag: Conveyor
   Layer: isGround
+  colliderSize: {x: 3, y: 0.5}

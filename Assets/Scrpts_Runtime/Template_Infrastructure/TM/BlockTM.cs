@@ -23,5 +23,7 @@ public class BlockTM : ScriptableObject {
 
     public string Layer;
 
+    public Vector2 colliderSize;
+
 
 }

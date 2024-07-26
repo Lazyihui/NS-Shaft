@@ -27,6 +27,7 @@ public static class BlockDomain {
         entity.SetPos(pos);
         entity.SetAni(tm.animatior);
         entity.SetSr(tm.sprite);
+        entity.SetColliderSize(tm.colliderSize);
 
         entity.moveSpeed = tm.moveSpeed;
         entity.isLeft = tm.isLeft;

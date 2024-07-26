@@ -8,6 +8,8 @@ public class BlockEntity : MonoBehaviour {
 
     [SerializeField] SpriteRenderer sr;
 
+    [SerializeField] BoxCollider2D boxCollider2D;
+
 
     public int id;
 
@@ -33,15 +35,21 @@ public class BlockEntity : MonoBehaviour {
         animator.runtimeAnimatorController = ani;
     }
 
+
+    public void SetColliderSize(Vector2 size) {
+        boxCollider2D.size = size;
+    }
     void OnCollisionEnter2D(Collision2D collision) {
 
         if (!gameObject.CompareTag("Nails")) {
 
+
+            // 要改 扣血
             PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), 1);
 
         } else {
             if (collision.contacts[0].normal == Vector2.down) {
-
+                // 要改 加血
                 PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -1);
             }
         }

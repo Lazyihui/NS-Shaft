@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3792763992275586423}
   sr: {fileID: 7949692266532588127}
+  boxCollider2D: {fileID: 3548021282480258942}
   id: 0
   typeID: 0
   isLeft: 0
