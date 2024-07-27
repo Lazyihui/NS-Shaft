@@ -12,15 +12,19 @@ public class Context{
 
     public TemplateContext templateContext;
 
+    public UIContext uiContext;
+
     public Context(){
         assets = new AssetsContext();
         gameContext = new GameContext();
         moduleInput = new ModuleInput();
         templateContext = new TemplateContext();
+        uiContext = new UIContext();
     }
 
 
-    public void Inject(){
-        gameContext.Inject(assets,moduleInput,templateContext);
-    }
+    public void Inject(Canvas canvas){
+        gameContext.Inject(assets,moduleInput,templateContext,uiContext);
+        uiContext.Inject(assets,canvas);
+    }   
 }

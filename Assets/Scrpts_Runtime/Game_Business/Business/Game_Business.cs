@@ -10,11 +10,9 @@ public static class GameBusiness {
         WallDomain.Spawn(ctx, new Vector3(0, -12.5f, 0));
 
         BlockDomain.Spawn(ctx, 0, new Vector3(0, -4f, 0));
-
-
-
-
         BlockDomain.Spawn(ctx, 6, new Vector3(0, 4.7f, 0));
+
+        UIApp.Panel_HeartInfo_Open(ctx.uiContext, 10);
 
     }
 

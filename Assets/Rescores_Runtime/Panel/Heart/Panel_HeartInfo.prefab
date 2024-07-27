@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2945788062276179934}
   - component: {fileID: 2598098540059848331}
+  - component: {fileID: -1959810438343490453}
   m_Layer: 5
-  m_Name: Panel_HeatInfo
+  m_Name: Panel_HeartInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +46,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640769607539498412}
   m_CullTransparentMesh: 1
+--- !u!114 &-1959810438343490453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640769607539498412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4733a2bd105d4740b83bf9e52c4c5bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elePrefab: {fileID: 6936388644084081341, guid: 673ed4ea511e87443a0b0253dd058541, type: 3}
+  heartGroup: {fileID: 4920672742288608765}
 --- !u!1 &9163219699490051032
 GameObject:
   m_ObjectHideFlags: 0

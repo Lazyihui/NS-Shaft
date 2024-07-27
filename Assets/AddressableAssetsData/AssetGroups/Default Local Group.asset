@@ -77,6 +77,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - BlockTM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 673ed4ea511e87443a0b0253dd058541
+    m_Address: Panel_HeatElememt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panel
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08f79e11d28c2c940a55e2a79654b872
+    m_Address: Panel_HeatInfo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Panel
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: f7ff0da237d38d74fae86c7e2b988669, type: 2}
   m_SchemaSet:
