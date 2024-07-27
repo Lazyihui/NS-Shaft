@@ -63,11 +63,13 @@ public static class BlockDomain {
 
         PlayerEntity player = ctx.playerRespository.Find(x => x.id == 0);
 
-        if (block.fakeTimer > 1) {
+        if (block.fakeTimer > 0.35f) {
             block.fakeTimer = 0;
             block.animator.SetTrigger("Move");
             player.DisableCurrentBlock();
         }
     }
+
+    
 
 }

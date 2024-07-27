@@ -34,7 +34,7 @@ public class BlockEntity : MonoBehaviour {
 
     public void Ctor() {
         fakeTimer = 0;
-        trampolineSpeed = 12.5f;
+        trampolineSpeed = 9f;
     }
 
     public void SetPos(Vector3 pos) {
@@ -50,7 +50,7 @@ public class BlockEntity : MonoBehaviour {
     }
 
 
-    public void SetColliderSize(Vector2 size,Vector2 offset) {
+    public void SetColliderSize(Vector2 size, Vector2 offset) {
         boxCollider2D.size = size;
         boxCollider2D.offset = offset;
     }
@@ -73,10 +73,10 @@ public class BlockEntity : MonoBehaviour {
 
 
         // normal conveyor
-        if (!gameObject.CompareTag("Nails")) {
+        if (!gameObject.CompareTag("Nails") && collision.contacts[0].normal == Vector2.down) {
 
 
-            // 要改 扣血
+            // 要改 加血
             PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), 1);
             player.currentBlock = GetComponent<BoxCollider2D>();
 
@@ -93,15 +93,15 @@ public class BlockEntity : MonoBehaviour {
 
             // 尖刺 会扣血的东西
             if (collision.contacts[0].normal == Vector2.down) {
-                // 要改 加血
-                PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -1);
+                // 要改 扣血
+                PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -3);
                 player.currentBlock = GetComponent<BoxCollider2D>();
 
             }
 
             if (collision.contacts[0].normal == Vector2.up) {
                 // 要改 扣血
-                PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -1);
+                PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), -3);
                 player.DisableCurrentBlock();
             }
         }
@@ -124,6 +124,13 @@ public class BlockEntity : MonoBehaviour {
 
 
         }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        // 可能会出现问题
+        Debug.Log("OnTriggerEnter2D");
+        GetComponent<BoxCollider2D>().enabled = false;
 
     }
 
