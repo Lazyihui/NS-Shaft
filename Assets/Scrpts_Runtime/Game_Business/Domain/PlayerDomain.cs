@@ -32,6 +32,10 @@ public static class PlayerDomain {
         player.Move(moveAxis);
 
     }
+
+    public static void MoveUp(PlayerEntity player,float trampolineSpeed) {
+        player.moveUp(trampolineSpeed);
+    }
 }
 
 

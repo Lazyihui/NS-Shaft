@@ -23,10 +23,14 @@ public class BlockTM : ScriptableObject {
 
     public string Layer;
 
+    [Header("GameObject")]
     public Vector2 colliderSize;
+    public Vector2 colliderOffset;
 
     [Header("Celling")]
     public bool isCelling;
+
+
 
 
 }

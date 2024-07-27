@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1351cb833debcd4daf2fba00b0eec8b, type: 3}
-  m_Name: BlockTM_5
+  m_Name: BlockTM_5Trampline
   m_EditorClassIdentifier: 
   typeID: 5
   isLeft: 0
   moveSpeed: 0
-  animatior: {fileID: 9100000, guid: e8c4bfc65f40c2d4d8d6fae68212b494, type: 2}
-  sprite: {fileID: -117601332951816804, guid: 58a06f184081e9b42b3f3e10b3a6b220, type: 3}
-  tag: Fake
+  animatior: {fileID: 9100000, guid: 240b8c5e45299054094c595181a2fabb, type: 2}
+  sprite: {fileID: -8680503649722388935, guid: 719d888d1d4f13c4eaddb0c9ba25e128, type: 3}
+  tag: Trampoline
   Layer: isGround
   colliderSize: {x: 3, y: 0.5}
+  colliderOffset: {x: 0, y: 0.25}
   isCelling: 0

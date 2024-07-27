@@ -41,6 +41,12 @@ public class PlayerEntity : MonoBehaviour {
         animator.SetBool("isGround", isGround);
     }
 
+    public void moveUp(float trampolineSpeed) {
+        Vector2 oldVelocity = rb.velocity;
+        oldVelocity.y = trampolineSpeed * Vector2.up.y;
+        rb.velocity = oldVelocity;
+    }
+
     void Face(float xDir) {
         if (xDir > 0) {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -70,11 +76,11 @@ public class PlayerEntity : MonoBehaviour {
 
 
     public void DisableCurrentBlock() {
-    
+
         if (currentBlock != null) {
             currentBlock.enabled = false;
         }
-    
+
     }
 
 }

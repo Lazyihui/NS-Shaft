@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BlockEntity : MonoBehaviour {
 
-    [SerializeField] public  Animator animator;
+    [SerializeField] public Animator animator;
 
     [SerializeField] SpriteRenderer sr;
 
@@ -28,9 +28,13 @@ public class BlockEntity : MonoBehaviour {
 
     public float fakeTimer;
 
+    // trampoline
+    public float trampolineSpeed;
+
 
     public void Ctor() {
         fakeTimer = 0;
+        trampolineSpeed = 12.5f;
     }
 
     public void SetPos(Vector3 pos) {
@@ -46,8 +50,9 @@ public class BlockEntity : MonoBehaviour {
     }
 
 
-    public void SetColliderSize(Vector2 size) {
+    public void SetColliderSize(Vector2 size,Vector2 offset) {
         boxCollider2D.size = size;
+        boxCollider2D.offset = offset;
     }
 
     public void MoveUp(float dt) {
@@ -74,6 +79,15 @@ public class BlockEntity : MonoBehaviour {
             // 要改 扣血
             PlayerDomain.ModifyHealth(collision.gameObject.GetComponent<PlayerEntity>(), 1);
             player.currentBlock = GetComponent<BoxCollider2D>();
+
+            if (gameObject.CompareTag("Trampoline")) {
+
+                // 人物向上加速
+                PlayerDomain.MoveUp(player, trampolineSpeed);
+                // 触发SetTrigger("Bounce");
+                animator.SetTrigger("Bounce");
+
+            }
 
         } else {
 
@@ -104,7 +118,7 @@ public class BlockEntity : MonoBehaviour {
 
         }
 
-          if (gameObject.CompareTag("Fake") && collision.contacts[0].normal == Vector2.down) {
+        if (gameObject.CompareTag("Fake") && collision.contacts[0].normal == Vector2.down) {
 
             fakeTimer += Time.deltaTime;
 
