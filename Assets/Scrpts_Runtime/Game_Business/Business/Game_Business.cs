@@ -80,5 +80,7 @@ public static class GameBusiness {
     }
 
     static void LateTick(GameContext ctx, float dt) {
+        PlayerEntity player = ctx.playerRespository.Find(x => x.id == 0);
+        UIApp.Panel_HeartInfo_Update(ctx.uiContext, player.health);
     }
 }
