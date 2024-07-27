@@ -34,13 +34,6 @@ public class Panel_HeartInfo : MonoBehaviour {
             for (int i = 0; i < diff; i++) {
 
                 Image ele = GameObject.Instantiate(elePrefab, heartGroup);
-
-                if (element.Count > 0) {
-                    ele.transform.position = Vector3.zero;
-                    Vector3 pos = new Vector3(13.5f, 0, 0);
-                    ele.transform.position = pos + new Vector3(22 * element.Count, 0, 0);
-                    Debug.Log("pos:" + ele.transform.position);
-                }
                 element.Add(ele);
 
             }
