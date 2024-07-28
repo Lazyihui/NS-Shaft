@@ -70,6 +70,8 @@ public static class BlockDomain {
         }
     }
 
-    
+    public static void MoveSpeedUpdate(GameContext ctx, BlockEntity block) {
+        block.selfMoveSpeed = ctx.gameEntity.objMoveSpeed;
+    }
 
 }

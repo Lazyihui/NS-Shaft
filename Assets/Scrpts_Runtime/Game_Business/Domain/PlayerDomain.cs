@@ -36,6 +36,8 @@ public static class PlayerDomain {
     public static void MoveUp(PlayerEntity player,float trampolineSpeed) {
         player.moveUp(trampolineSpeed);
     }
+
+
 }
 
 

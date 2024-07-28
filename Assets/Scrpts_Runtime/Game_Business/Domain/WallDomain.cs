@@ -2,14 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class WallDomain
-{
+public static class WallDomain {
 
-    public static WallEntity Spawn(GameContext ctx,Vector3 pos)
-    {
+    public static WallEntity Spawn(GameContext ctx, Vector3 pos) {
         bool has = ctx.assets.TryGetEntity("Wall_Entity", out GameObject prefab);
-        if (!has)
-        {
+        if (!has) {
             Debug.LogError("No prefab found");
             return null;
         }
@@ -25,8 +22,12 @@ public static class WallDomain
         return entity;
     }
 
-    public static void Move(GameContext ctx, WallEntity wall, float dt)
-    {
+    public static void Move(GameContext ctx, WallEntity wall, float dt) {
         wall.Move(dt);
+    }
+
+    public static void MoveSpeedUpdate(GameContext ctx, WallEntity wall) {
+        wall.moveSpeed = ctx.gameEntity.objMoveSpeed;
+
     }
 }

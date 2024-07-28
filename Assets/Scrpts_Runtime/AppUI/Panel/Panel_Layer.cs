@@ -46,8 +46,6 @@ public class Panel_Layer : MonoBehaviour {
         secondTextUp.text = floorS.ToString();
         firstTextUp.text = floorF.ToString();
 
-        Debug.Log("floorF: " + floorF + " floorS: " + floorS + " floorT: " + floorT);
-
 
     }
 
