@@ -5,9 +5,18 @@ using UnityEngine.UI;
 
 
 public class Panel_Layer : MonoBehaviour {
-    [SerializeField] public Text firstText;
+    [SerializeField] public Text firstTextUp;
 
-    [SerializeField] public Text firstTextOld;
+    [SerializeField] public Text firstTextDown;
+
+    [SerializeField] public Text secondTextUp;
+
+    [SerializeField] public Text secondTextDown;
+
+
+    [SerializeField] public Text thirdTextUp;
+
+    [SerializeField] public Text thirdTextDown;
 
     public int floor;
 
@@ -27,6 +36,23 @@ public class Panel_Layer : MonoBehaviour {
         floorF = floor / 100;
         floorS = (floor % 100) / 10;
         floorT = floor % 10;
+
+        // int f = 0;
+        // int s = 0;
+        // int t = 0;
+
+        // floorT = 
+        thirdTextDown.text = floorT.ToString();
+
+        Debug.Log(thirdTextDown.text + " " + thirdTextUp.text);
+
+        if (thirdTextDown.text != thirdTextUp.text) {
+
+            thirdTextUp.text = thirdTextDown.text;
+
+        }
+
+        Debug.Log(thirdTextDown.text + " " + thirdTextUp.text);
 
     }
 
