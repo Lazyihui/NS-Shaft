@@ -13,7 +13,7 @@ public static class GameBusiness {
         BlockDomain.Spawn(ctx, 6, new Vector3(0, 4.7f, 0));
 
         UIApp.Panel_HeartInfo_Open(ctx.uiContext, 10);
-        UIApp.Panel_Layer_Open(ctx.uiContext);
+        UIApp.Panel_Layer_Open(ctx,ctx.uiContext);
 
     }
 
@@ -56,8 +56,9 @@ public static class GameBusiness {
 
     static void LogicFix(GameContext ctx, float dt) {
 
-
+// game
         GameDomain.ToSpawnBlock(ctx, dt);
+        GameDomain.layerNumberUpate(ctx, dt);
 
         int WallLen = ctx.wallRespository.TakeAll(out WallEntity[] walls);
         for (int i = 0; i < WallLen; i++) {
@@ -83,5 +84,6 @@ public static class GameBusiness {
     static void LateTick(GameContext ctx, float dt) {
         PlayerEntity player = ctx.playerRespository.Find(x => x.id == 0);
         UIApp.Panel_HeartInfo_Update(ctx.uiContext, player.health); 
+        UIApp.Panel_LayerNumber_Update(ctx, ctx.uiContext);
     }
 }

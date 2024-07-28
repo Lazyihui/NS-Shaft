@@ -40,7 +40,7 @@ public static class UIApp {
     #endregion
 
     #region Panel_Layer
-    public static void Panel_Layer_Open(UIContext ctx) {
+    public static void Panel_Layer_Open(GameContext ctxContext,UIContext ctx) {
         Panel_Layer panel = ctx.panel_Layer;
         if (panel == null) {
             ctx.assetsContext.panels.TryGetValue("Panel_Layer", out GameObject prefab);
@@ -49,6 +49,16 @@ public static class UIApp {
             ctx.panel_Layer = panel;
         }
         panel.Show();
+        panel.Init(ctxContext.gameEntity.layerNumber);
+    }
+
+    public static void Panel_LayerNumber_Update(GameContext ctxContext, UIContext ctx) {
+        Panel_Layer panel = ctx.panel_Layer;
+        if (panel == null) {
+            Debug.LogError("Panel_Layer is not opened");
+            return;
+        }
+        panel.Init(ctxContext.gameEntity.layerNumber);
     }
 
     public static void Panel_Layer_Close(UIContext ctx) {

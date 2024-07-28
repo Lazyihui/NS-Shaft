@@ -24,4 +24,20 @@ public static class GameDomain {
 
     }
 
+    public static void layerNumberUpate(GameContext ctx, float dt) {
+
+        GameEntity game = ctx.gameEntity;
+
+        game.layerTimer += dt;
+
+        if (game.layerTimer >= game.layerInterval) {
+            game.layerNumber++;
+            game.layerTimer = 0;
+        }
+
+
+        Debug.Log("Layer Number: " + game.layerNumber);
+
+    }
+
 }
