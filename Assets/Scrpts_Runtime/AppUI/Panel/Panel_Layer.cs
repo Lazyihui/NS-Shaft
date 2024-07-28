@@ -42,17 +42,12 @@ public class Panel_Layer : MonoBehaviour {
         // int t = 0;
 
         // floorT = 
-        thirdTextDown.text = floorT.ToString();
+        thirdTextUp.text = floorT.ToString();
+        secondTextUp.text = floorS.ToString();
+        firstTextUp.text = floorF.ToString();
 
-        Debug.Log(thirdTextDown.text + " " + thirdTextUp.text);
+        Debug.Log("floorF: " + floorF + " floorS: " + floorS + " floorT: " + floorT);
 
-        if (thirdTextDown.text != thirdTextUp.text) {
-
-            thirdTextUp.text = thirdTextDown.text;
-
-        }
-
-        Debug.Log(thirdTextDown.text + " " + thirdTextUp.text);
 
     }
 
