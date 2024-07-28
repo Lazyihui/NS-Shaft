@@ -7,6 +7,8 @@ public class UIContext {
 
     public Panel_HeartInfo panel_HeartInfo;
 
+    public Panel_Layer panel_Layer;
+
     // inject
 
     public Canvas canvas;
