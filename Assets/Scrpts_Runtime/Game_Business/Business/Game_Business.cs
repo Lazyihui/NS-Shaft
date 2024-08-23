@@ -32,6 +32,7 @@ public static class GameBusiness {
         ref float restFixTime = ref ctx.gameEntity.restFixTime;
 
         restFixTime += dt;
+        // ref传进去的参数在函数内部可以直接使用，而out不可（除非在函数体内部，out参数在使用之前赋值）
         const float FIX_INTERVAL = 0.020f;
 
         if (restFixTime <= FIX_INTERVAL) {
@@ -49,6 +50,8 @@ public static class GameBusiness {
 
         LateTick(ctx, dt);
     }
+
+
 
     static void PreTick(GameContext ctx, float dt) {
         ctx.moduleInput.ProcessMove();
