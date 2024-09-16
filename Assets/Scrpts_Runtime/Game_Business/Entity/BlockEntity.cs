@@ -111,18 +111,15 @@ public class BlockEntity : MonoBehaviour {
 
     void OnCollisionStay2D(Collision2D collision) {
 
+        float dt = Time.deltaTime;
         if (gameObject.CompareTag("Conveyor") && collision.contacts[0].normal == Vector2.down) {
-
             Vector2 dir = isLeft ? Vector2.left : Vector2.right;
-            collision.gameObject.transform.position += (Vector3)dir * moveSpeed * Time.deltaTime;
-
+            collision.gameObject.transform.position += (Vector3)dir * moveSpeed * dt;
         }
 
         if (gameObject.CompareTag("Fake") && collision.contacts[0].normal == Vector2.down) {
 
-            fakeTimer += Time.deltaTime;
-
-
+            fakeTimer += dt;
         }
 
     }
